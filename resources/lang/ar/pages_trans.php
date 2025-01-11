@@ -1,0 +1,30 @@
+<?php return array (
+  'Dashboard' => 'اللوحة الرئيسية',
+
+  'All' => 'الجميع',
+  'cancel_reason' => 'اسباب الإلغاء ',
+  'home' => 'الرئيسية',
+  
+  'passengers' => 'العملاء ',
+  'drivers' => 'الكباتن',
+  'services' => 'الخدمات',
+  'service' => 'الخدمة',
+  'categories' => 'الاقسام',
+  'category' => 'القسم',
+  'name' => 'الاسم',
+  'first_name' => 'الاسم الاول',
+  'last_name' => 'الاسم الاخير',
+  'email' => 'البريد الالكتروني',
+  'password' => 'كلمة المرور',
+  'status' => 'الحالة',
+  'add' => 'إضافة',
+  'save' => 'حفظ',
+  'close' => 'غلق',
+  'cancel' => 'إلغاء',
+  'image' => 'صورة',
+  'gender' => 'الجنس',
+  'code' => 'رمز الدولة',
+  'created_at' =>  'تاريخ الانشاء',
+  'process' => 'العمليات',
+  
+);
