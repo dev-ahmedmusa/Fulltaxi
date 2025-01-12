@@ -39,12 +39,9 @@ class DriverController extends Controller
         // Decode the JSON data into an array
         $countries = json_decode($json, true);
         $documents = DocumentMaster::where(
-            // [
-            //     ['doc_type', '=', 'Driver'],
-            //     ['doc_type', '=', 'Vehicle'],
-            // ]
-           'doc_type', 'Driver')
-            ->orWhere('doc_type', 'Vehicle'
+          
+           'doc_for', 'Driver')
+            ->orWhere('doc_for', 'Vehicle'
           )->get();
           $documents_count = count($documents);
         //dd($documents);
@@ -58,7 +55,7 @@ class DriverController extends Controller
     {
   
 
-
+//dd($request);
 
        DB::beginTransaction();
 
@@ -91,25 +88,18 @@ class DriverController extends Controller
 
            // Store Data or Upload Doc of Driver Into Document List Table
        
-           $documents = DocumentMaster::where('doc_type', 'Driver')
-                        ->orWhere('doc_type', 'Vehicle')->get();
+           $documents = DocumentMaster::where('doc_for', 'Driver')
+                        ->orWhere('doc_for', 'Vehicle')->get();
        
              foreach ($request->allFiles() as $key => $value ) {
 
-           $docIds = DocumentMaster::where('name',$key)
+           $docIds = DocumentMaster::where('doc_type',$key)
            ->get(['id']);
            //dd($docs);
            $index = 0;
               $driverDocs = new DocumentList();
     
-            //   if($key == "Personal_Image"){
-            //     $is_upload = $this->verifyAndStoreImageForDrivers($request,"Personal_Image",'driverDocs',$ifno_driver->id,'uploadFiles');
-            //     if($is_upload){
-            //         $driver =Driver::findorFail($ifno_driver->id);
-            //         $driver->image = $is_upload;
-            //     }
-              
-            // }
+            
                          $is_upload = $this->verifyAndStoreImageForDrivers($request,$key,'driverDocs',$ifno_driver->id,'uploadFiles');
               if($is_upload){
                

@@ -35,13 +35,13 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive">
-                                        <table class="table text-md-nowrap" id="example2">
+                                        <table class="table text-md-nowrap" id="example١">
                                             <thead>
                                             <tr>
                                                 <th class="wd-15p border-bottom-0">#</th>
                                                 <th class="wd-15p border-bottom-0">الاسم</th>
-                                                <th class="wd-15p border-bottom-0">نوع المستند</th>
-                                                <th class="wd-15p border-bottom-0">صلاحية المستند</th>
+                                                <th class="wd-15p border-bottom-0"> المستند خاص ب</th>
+                                                <th class="wd-15p border-bottom-0"> تاريخ الانشاء</th>
                                                 <th class="wd-20p border-bottom-0">الحالة</th>
                                                 <th class="wd-20p border-bottom-0">العمليات</th>
                                             </tr>
@@ -51,9 +51,14 @@
                                                <tr>
                                                    <td>{{$loop->iteration}}</td>
                                                    <td><a href="{{route('document.show',$document->id)}}">{{$document->name}}</a> </td>
-                                                   <td>{{ $document->doc_type}}</td>
-                                                   <td>{{ $document->expire_valid_for}} سنة</td>
-                                                   <td>{{ $document->created_at->diffForHumans() }}</td>
+                                                   <td>{{ $document->doc_for}}</td>
+                                                   
+                                                   <td>{{ $document->created_at?  $document->created_at->diffForHumans() : '-----'  }}</td>
+                                                   <td>
+                                                    <div
+                                                        class="dot-label bg-{{$document->status == 'Active' ? 'success':'danger'}} ml-1"></div>
+                                                    {{$document->status == 'Active' ? trans('form_trans.Enabled'):trans('form_trans.Not_enabled')}}
+                                                </td>
                                                    <td>
                                                        <a class="modal-effect btn btn-sm btn-info" data-effect="effect-scale"  data-toggle="modal" href="#edit{{$document->id}}"><i class="las la-pen"></i></a>
                                                        <a class="modal-effect btn btn-sm btn-danger" data-effect="effect-scale"  data-toggle="modal" href="#delete{{$document->id}}"><i class="las la-trash"></i></a>

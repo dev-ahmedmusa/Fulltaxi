@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('driver_vehicles', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('vehicle_type_id')->references('id')->on('vehicle_types')->onDelete('cascade');
+            $table->foreignId('vehicle_type_id')->nullable()->references('id')->on('vehicle_types')->onDelete('cascade');
             $table->foreignId('driver_id')->references('id')->on('drivers')->onDelete('cascade');
             $table->foreignId('make_id')->references('id')->on('makes')->onDelete('cascade');
             $table->foreignId('vehicle_model_id')->references('id')->on('vehicle_models')->onDelete('cascade');

@@ -18,7 +18,7 @@ return new class extends Migration
             //$table->foreignId('docmaster_id')->references('id')->on('document_masters')->onDelete('cascade');
             $table->foreignId('driver_id')->references('id')->on('drivers')->onDelete('cascade');
             $table->string('doc_file');
-            $table->date('expire_date');
+            $table->date('expire_date')->nullable();
             $table->boolean('status')->default(1);
             $table->timestamps();
         });

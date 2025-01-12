@@ -265,7 +265,7 @@
                                                         <div class="row mb-4">
                                                             <div class="col-sm-12 col-md-4">
                                                               
-                                                                <input type="file" accept="image/*" name="{{$doc->name}}" onchange="loadFile(event)">
+                                                                <input type="file" accept="image/*" name="{{$doc->doc_type}}" onchange="loadFile(event)">
                                                                 <img style="border-radius:50%" width="150px" height="150px" id="{{$doc->id}}"/>
                                                             </div>
                                                             

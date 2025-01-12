@@ -22,10 +22,16 @@
                     <label for="exampleInputPassword1">مدة صلاحية المستند بالسنة</label>
                     <input type="number" name="expire_valid_for" class="form-control">
                 </div>
-
+                <div class="modal-body">
+                    <p>
+                        يرجي كتابة نوع المستند هكذا مثلا : vehicle_image_back
+                    </p>
+                    <label for="exampleInputPassword1">مدة صلاحية المستند بالسنة</label>
+                    <input type=" text" name="doc_type" class="form-control">
+                </div>
                 <div class="form-group">
                                     
-                                    <p>  نوع المستند</p><select name="doc_type" class="form-control select2-no-search">
+                                    <p>   المستند خاص ب:</p><select name="doc_for" class="form-control select2-no-search">
                                      <option label="Choose one">
                                      </option>
                                      <option value="Driver">

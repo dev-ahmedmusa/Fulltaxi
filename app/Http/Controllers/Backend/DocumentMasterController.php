@@ -33,9 +33,10 @@ class DocumentMasterController extends Controller
 
 try {
     $doc =new DocumentMaster();
-    $doc->name = $request->name;
-    $doc->name_ar = $request->name_ar;
+    $doc->name     = $request->name;
+    $doc->name_ar  = $request->name_ar;
     $doc->doc_type = $request->doc_type;
+    $doc->doc_for  = $request->doc_for;
     $doc->expire_valid_for = $request->expire_valid_for;
    
     if(isset($request->status) && $request->status == "on"){
@@ -81,9 +82,10 @@ try {
     {
         try {
             $doc = DocumentMaster::findOrFail($request->id);
-            $doc->name = $request->name;
-            $doc->name_ar = $request->name_ar;
+            $doc->name     = $request->name;
+            $doc->name_ar  = $request->name_ar;
             $doc->doc_type = $request->doc_type;
+            $doc->doc_for  = $request->doc_for;
             $doc->expire_valid_for = $request->expire_valid_for;
            
             if(isset($request->status) && $request->status == "on"){
